@@ -35,3 +35,7 @@ WantedBy=multi-user.target
 ### systemctl restart prometheus
 
 ### node exporter runs on 9090 port no.
+
+
+# Finally, Add below line in prometheus.yml file under - targets: ["localhost:9000"]
+### - targets: ["3.87.126.246:9100"]
