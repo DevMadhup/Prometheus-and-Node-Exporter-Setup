@@ -9,18 +9,23 @@
 
 # Add below lines inside node.service file
 [Unit]
+
 Description=Node Exporter
+
 Documentation=https://prometheus.io/docs/introduction/overview/
 
 After=network-online.target
 
 [Service]
+
 User=root
+
 Restart=on-failure
 
 ExecStart=/home/ubuntu/node_exporter-1.6.1.linux-amd64/node_exporter
 
 [Install]
+
 WantedBy=multi-user.target
 
 # Restart node exporter
