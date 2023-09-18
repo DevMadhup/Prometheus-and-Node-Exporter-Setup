@@ -38,4 +38,4 @@ WantedBy=multi-user.target
 
 
 # Finally, Add below line in prometheus.yml file under - targets: ["localhost:9000"]
-### - targets: ["3.87.126.246:9100"]
+### - targets: ["<public_ip_of_node-exporter-server>:9100"]
