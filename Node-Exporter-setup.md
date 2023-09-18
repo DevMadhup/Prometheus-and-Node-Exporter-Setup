@@ -28,6 +28,9 @@ ExecStart=/home/ubuntu/node_exporter-1.6.1.linux-amd64/node_exporter
 
 WantedBy=multi-user.target
 
+# Daemon-reload
+### systemctl daemon-reload
+
 # Restart node exporter
 ### systemctl restart node
 
