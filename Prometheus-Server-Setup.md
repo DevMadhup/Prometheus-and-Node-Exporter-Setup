@@ -65,3 +65,16 @@ systemctl restart prometheus
 ```bash
 - targets: ["<public_ip_of_node-exporter-server>:9100"]
 ```
+# 
+- Reload the system daemon
+
+```bash
+systemctl daemon-reload
+```
+#
+- Restart the prometheus server
+
+```bash
+systemctl restart prometheus
+```
+#
