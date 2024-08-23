@@ -1,13 +1,25 @@
-# Download Linux tar.gz file from below:
-### wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
-
-# Extract tar.gz file
-### tar zxvf node_exporter-1.6.1.linux-amd64.tar.gz
-
-# Create a file under following path
-### vi /etc/systemd/system/node.service
-
-# Add below lines inside node.service file
+## How to setup node exporter setup on linux machine 
+- Download Linux tar.gz file from below:
+  
+```bash
+wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
+```
+#
+- Extract tar.gz file
+  
+```bash
+tar zxvf node_exporter-1.6.1.linux-amd64.tar.gz
+```
+#
+- Create a file under following path
+  
+```bash
+vi /etc/systemd/system/node.service
+```
+# 
+- Add below lines inside node.service file
+  
+```bash
 [Unit]
 
 Description=Node Exporter
@@ -27,11 +39,20 @@ ExecStart=/home/ubuntu/node_exporter-1.6.1.linux-amd64/node_exporter
 [Install]
 
 WantedBy=multi-user.target
+```
+#
+- Daemon-reload
+  
+```bash
+systemctl daemon-reload
+```
+#
+- Restart node exporter
 
-# Daemon-reload
-### systemctl daemon-reload
+```bash
+systemctl restart node
+```
+#
+> [!Important]
+> node exporter runs on 9100 port no.
 
-# Restart node exporter
-### systemctl restart node
-
-### node exporter runs on 9100 port no.
