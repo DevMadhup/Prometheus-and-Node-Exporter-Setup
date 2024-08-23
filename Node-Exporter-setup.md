@@ -1,23 +1,24 @@
 ## How to setup node exporter setup on linux machine 
-- Download Linux tar.gz file from below:
+
+- Download the linux tar.gz file using the below command:
   
 ```bash
 wget https://github.com/prometheus/node_exporter/releases/download/v1.6.1/node_exporter-1.6.1.linux-amd64.tar.gz
 ```
 #
-- Extract tar.gz file
+- Extract the node exporter tar.gz file
   
 ```bash
 tar zxvf node_exporter-1.6.1.linux-amd64.tar.gz
 ```
 #
-- Create a file under following path
+- Create a file node.service inside the <mark>/etc/systemd/system</mark> directory.
   
 ```bash
 vi /etc/systemd/system/node.service
 ```
 # 
-- Add below lines inside node.service file
+- Now, open the node.service file and paste the below content.
   
 ```bash
 [Unit]
@@ -41,13 +42,13 @@ ExecStart=/home/ubuntu/node_exporter-1.6.1.linux-amd64/node_exporter
 WantedBy=multi-user.target
 ```
 #
-- Daemon-reload
+- Reload the system daemon
   
 ```bash
 systemctl daemon-reload
 ```
 #
-- Restart node exporter
+- Restart the node exporter
 
 ```bash
 systemctl restart node
